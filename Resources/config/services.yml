@@ -1,0 +1,13 @@
+---
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+    IDCI\Bundle\AgreementBundle\Repository\Doctrine\:
+        resource: '../../Repository/Doctrine'
+        tags:
+            - {name: doctrine.repository_service}
+    IDCI\Bundle\AgreementBundle\Handler\DoctrineOMAgreementHandler:
+        arguments:
+            $om: '@Doctrine\Common\Persistence\ObjectManager'

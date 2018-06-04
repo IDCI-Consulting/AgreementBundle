@@ -1,0 +1,10 @@
+---
+doctrine:
+    dbal:
+        types:
+            uuid: Ramsey\Uuid\Doctrine\UuidType
+
+    orm:
+        mappings:
+            IDCIAgreementBundle:
+                prefix: "IDCI\\Bundle\\AgreementBundle\\Model"
