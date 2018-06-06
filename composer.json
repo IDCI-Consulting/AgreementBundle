@@ -1,0 +1,40 @@
+{
+    "name": "idci/agreement-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony bundle to handle agreement management features general conditions",
+    "keywords": ["agreement", "agreement management", "general conditions management"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gabriel Bondaz",
+            "email": "gabriel.bondaz@idci-consulting.fr",
+            "homepage": "https://www.idci-consulting.fr"
+        },
+        {
+            "name": "Brahim Boukoufallah",
+            "email": "brahim.boukoufallah@idci-consulting.fr",
+            "homepage": "https://www.idci-consulting.fr"
+        },
+        {
+            "name": "Eddie Barraco",
+            "email": "eddie.barraco@idci-consulting.fr",
+            "homepage": "https://www.idci-consulting.fr"
+        }
+    ],
+    "require": {
+        "php": "^5.5.9|>=7.0.8",
+        "ramsey/uuid-doctrine": "~1.0",
+        "doctrine/doctrine-bundle": "^1.6",
+        "symfony/symfony": "^3.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.0",
+        "doctrine/orm": "^2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "IDCI\\Bundle\\AgreementBundle\\": ""
+        }
+    },
+    "minimum-stability": "stable"
+}

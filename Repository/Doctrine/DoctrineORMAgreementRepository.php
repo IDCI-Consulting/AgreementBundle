@@ -15,7 +15,7 @@ class DoctrineORMAgreementRepository extends ServiceEntityRepository implements 
         parent::__construct($registry, Agreement::class);
     }
 
-    public function findLastByTermReference(ContractingPartyInterface $contractingParty, string $termReference): ?Agreement
+    public function findLastByTermReference(ContractingPartyInterface $contractingParty, $termReference)
     {
         $qb = $this
             ->createQueryBuilder('a')

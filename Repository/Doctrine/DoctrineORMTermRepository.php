@@ -14,7 +14,7 @@ class DoctrineORMTermRepository extends ServiceEntityRepository implements TermR
         parent::__construct($registry, Term::class);
     }
 
-    public function findCurrent(string $reference): ?Term
+    public function findCurrent($reference)
     {
         $qb = $this
             ->createQueryBuilder('t')

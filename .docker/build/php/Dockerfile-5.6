@@ -1,0 +1,22 @@
+FROM php:5.6-fpm
+
+#libicu-dev g++ wget git libxrender1 libfontconfig
+RUN apt-get update && apt-get install -y git zlib1g-dev \
+	&& rm -rf /var/lib/apt/lists/*
+
+# extensions
+#RUN docker-php-ext-install pdo
+#RUN docker-php-ext-configure intl && docker-php-ext-install intl
+RUN docker-php-ext-install zip
+
+# xdebug
+RUN pecl install xdebug-2.5.5 && docker-php-ext-enable xdebug
+
+# php.ini
+COPY php.ini /usr/local/etc/php/
+
+# install composer
+COPY install-composer.sh /tmp/install-composer.sh
+RUN chmod +x /tmp/install-composer.sh
+RUN bash /tmp/install-composer.sh
+VOLUME /root/.composer

@@ -2,8 +2,6 @@
 
 namespace IDCI\Bundle\AgreementBundle\Model;
 
-use Ramsey\Uuid\Uuid;
-
 class Term
 {
     private $id;
@@ -19,77 +17,77 @@ class Term
         $this->setCreatedAt(new \DateTime('now'));
     }
 
-    public function getId(): ?Uuid
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getReference(): ?string
+    public function getReference()
     {
         return $this->reference;
     }
 
-    public function setReference($reference): self
+    public function setReference($reference)
     {
         $this->reference = $reference;
 
         return $this;
     }
 
-    public function getVersion(): ?string
+    public function getVersion()
     {
         return $this->version;
     }
 
-    public function setVersion($version): self
+    public function setVersion($version)
     {
         $this->version = $version;
 
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getDescription()
     {
         return $this->description;
     }
 
-    public function setDescription($description): self
+    public function setDescription($description)
     {
         $this->description = $description;
 
         return $this;
     }
 
-    public function getUri(): ?string
+    public function getUri()
     {
         return $this->uri;
     }
 
-    public function setUri($uri): self
+    public function setUri($uri)
     {
         $this->uri = $uri;
 
         return $this;
     }
 
-    public function getApplicableAt(): ?\DateTime
+    public function getApplicableAt()
     {
         return $this->applicableAt;
     }
 
-    public function setApplicableAt($applicableAt): self
+    public function setApplicableAt($applicableAt)
     {
         $this->applicableAt = $applicableAt;
 
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTime
+    public function getCreatedAt()
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTime $createdAt): self
+    public function setCreatedAt(\DateTime $createdAt)
     {
         $this->createdAt = $createdAt;
 

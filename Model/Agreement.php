@@ -2,8 +2,6 @@
 
 namespace IDCI\Bundle\AgreementBundle\Model;
 
-use Ramsey\Uuid\Uuid;
-
 class Agreement
 {
     private $id;
@@ -16,41 +14,41 @@ class Agreement
         $this->setCreatedAt(new \DateTime('now'));
     }
 
-    public function getId(): ?Uuid
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getContractingPartyUuid(): string
+    public function getContractingPartyUuid()
     {
         return $this->contractingPartyUuid;
     }
 
-    public function setContractingPartyUuid(string $contractingPartyUuid): self
+    public function setContractingPartyUuid($contractingPartyUuid)
     {
         $this->contractingPartyUuid = $contractingPartyUuid;
 
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTime
+    public function getCreatedAt()
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTime $createdAt): self
+    public function setCreatedAt(\DateTime $createdAt)
     {
         $this->createdAt = $createdAt;
 
         return $this;
     }
 
-    public function getTerm(): ?Term
+    public function getTerm()
     {
         return $this->term;
     }
 
-    public function setTerm(Term $term): self
+    public function setTerm(Term $term)
     {
         $this->term = $term;
 

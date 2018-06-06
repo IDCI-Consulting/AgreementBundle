@@ -2,17 +2,15 @@
 
 namespace IDCI\Bundle\AgreementBundle\Handler;
 
-use IDCI\Bundle\AgreementBundle\Model\Agreement;
 use IDCI\Bundle\AgreementBundle\Model\ContractingPartyInterface;
-use IDCI\Bundle\AgreementBundle\Model\Term;
 
 interface AgreementHandlerInterface
 {
-    public function createAgreement(ContractingPartyInterface $contractingParty, string $termReference): Agreement;
+    public function createAgreement(ContractingPartyInterface $contractingParty, $termReference);
 
-    public function getLastAgreement(ContractingPartyInterface $contractingParty, string $termReference): Agreement;
+    public function getLastAgreement(ContractingPartyInterface $contractingParty, $termReference);
 
-    public function getCurrentTerm(string $termReference): Term;
+    public function getCurrentTerm($termReference);
 
-    public function getValidAgreement(ContractingPartyInterface $contractingParty, string $termReference): Agreement;
+    public function getValidAgreement(ContractingPartyInterface $contractingParty, $termReference);
 }
