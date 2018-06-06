@@ -12,7 +12,7 @@
         <field name="reference" type="string" column="reference"/>
         <field name="version" type="string" column="version"/>
         <field name="description" type="string" column="description"/>
-        <field name="uri" type="string" column="uri"/>
+        <field name="uri" type="string" column="uri" nullable="true"/>
         <field name="applicableAt" type="datetime" column="applicable_at"/>
         <field name="createdAt" type="datetime" column="created_at"/>
         <lifecycle-callbacks>
