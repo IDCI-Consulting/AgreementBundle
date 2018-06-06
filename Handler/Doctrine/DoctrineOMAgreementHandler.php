@@ -1,6 +1,6 @@
 <?php
 
-namespace IDCI\Bundle\AgreementBundle\Handler;
+namespace IDCI\Bundle\AgreementBundle\Handler\Doctrine;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use IDCI\Bundle\AgreementBundle\Exception\ContractingPartyNotAgreeTermException;

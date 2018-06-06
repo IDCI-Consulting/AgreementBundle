@@ -8,6 +8,5 @@ services:
         resource: '../../Repository/Doctrine'
         tags:
             - {name: doctrine.repository_service}
-    IDCI\Bundle\AgreementBundle\Handler\DoctrineOMAgreementHandler:
-        arguments:
-            $om: '@Doctrine\Common\Persistence\ObjectManager'
+    IDCI\Bundle\AgreementBundle\Handler\:
+        resource: '../../Handler'
