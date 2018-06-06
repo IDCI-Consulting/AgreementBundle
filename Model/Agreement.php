@@ -14,16 +14,27 @@ class Agreement
         $this->setCreatedAt(new \DateTime('now'));
     }
 
+    /**
+     * @return Ramsey\Uuid\Uuid
+     */
     public function getId()
     {
         return $this->id;
     }
 
+    /**
+     * @return string
+     */
     public function getContractingPartyUuid()
     {
         return $this->contractingPartyUuid;
     }
 
+    /**
+     * @param string $contractingPartyUuid
+     *
+     * @return self
+     */
     public function setContractingPartyUuid($contractingPartyUuid)
     {
         $this->contractingPartyUuid = $contractingPartyUuid;
@@ -31,11 +42,19 @@ class Agreement
         return $this;
     }
 
+    /*
+     * @return \Datetime
+     */
     public function getCreatedAt()
     {
         return $this->createdAt;
     }
 
+    /**
+     * @param \DateTime $createdAt
+     *
+     * @return self
+     */
     public function setCreatedAt(\DateTime $createdAt)
     {
         $this->createdAt = $createdAt;
@@ -43,11 +62,19 @@ class Agreement
         return $this;
     }
 
+    /**
+     * @return Term
+     */
     public function getTerm()
     {
         return $this->term;
     }
 
+    /**
+     * @param Term $term
+     *
+     * @return self
+     */
     public function setTerm(Term $term)
     {
         $this->term = $term;
