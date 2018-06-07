@@ -8,6 +8,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type as Type;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class AgreementType extends AbstractType
 {
@@ -42,6 +43,11 @@ class AgreementType extends AbstractType
                 return array_merge($value, [
                     'data-uri' => $options['term']->getUri(),
                 ]);
+            })
+            ->setNormalizer('constraints', function (Options $options, $value) {
+                return [
+                    new Assert\IsTrue(),
+                ];
             })
         ;
     }
