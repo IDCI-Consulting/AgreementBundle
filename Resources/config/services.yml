@@ -10,3 +10,5 @@ services:
             - {name: doctrine.repository_service}
     IDCI\Bundle\AgreementBundle\Handler\:
         resource: '../../Handler'
+    IDCI\Bundle\AgreementBundle\Form\:
+        resource: '../../Form'

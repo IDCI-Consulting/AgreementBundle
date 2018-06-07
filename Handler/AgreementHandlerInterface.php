@@ -3,6 +3,7 @@
 namespace IDCI\Bundle\AgreementBundle\Handler;
 
 use IDCI\Bundle\AgreementBundle\Model\ContractingPartyInterface;
+use Symfony\Component\Form\Form;
 
 interface AgreementHandlerInterface
 {
@@ -36,4 +37,19 @@ interface AgreementHandlerInterface
      * @return Agreement
      */
     public function getValidAgreement(ContractingPartyInterface $contractingParty, $termReference);
+
+    /**
+     * @param Form   $form
+     * @param string $termReference
+     * @param array  $options
+     */
+    public function formAddAgreement(Form $form, $termReference, $options);
+
+    /**
+     * @param Form   $form
+     * @param string $termReference
+     *
+     * @return bool
+     */
+    public function formIsAgreementChecked(Form $form, $termReference);
 }

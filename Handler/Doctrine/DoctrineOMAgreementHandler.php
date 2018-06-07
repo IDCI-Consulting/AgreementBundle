@@ -6,11 +6,14 @@ use Doctrine\Common\Persistence\ObjectManager;
 use IDCI\Bundle\AgreementBundle\Exception\ContractingPartyNotAgreeTermException;
 use IDCI\Bundle\AgreementBundle\Exception\NoValidAgreementException;
 use IDCI\Bundle\AgreementBundle\Exception\UndefinedTermException;
+use IDCI\Bundle\AgreementBundle\Form\Type\AgreementType;
+use IDCI\Bundle\AgreementBundle\Handler\AgreementHandlerInterface;
 use IDCI\Bundle\AgreementBundle\Model\Agreement;
 use IDCI\Bundle\AgreementBundle\Model\ContractingPartyInterface;
 use IDCI\Bundle\AgreementBundle\Model\Term;
+use Symfony\Component\Form\Form;
 
-class DoctrineOMAgreementHandler
+class DoctrineOMAgreementHandler implements AgreementHandlerInterface
 {
     private $om;
 
@@ -67,5 +70,29 @@ class DoctrineOMAgreementHandler
         }
 
         return $lastAgreement;
+    }
+
+    public function formAddAgreement(Form $form, $termReference, $options)
+    {
+        $currentTerm = $this->getCurrentTerm($termReference);
+
+        $form->add($this->buildFormConsentFieldId($currentTerm), AgreementType::class, array_merge($options, [
+            'mapped' => false,
+            'term_reference' => $currentTerm->getReference(),
+        ]));
+
+        return $this;
+    }
+
+    public function formIsAgreementChecked(Form $form, $termReference)
+    {
+        $currentTerm = $this->getCurrentTerm($termReference);
+
+        return (bool) $form->get($this->buildFormConsentFieldId($currentTerm))->getData();
+    }
+
+    protected function buildFormConsentFieldId(Term $term)
+    {
+        return sprintf('idci_agreement_consent_%s', $term->getId());
     }
 }
