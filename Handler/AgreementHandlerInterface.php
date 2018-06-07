@@ -16,6 +16,11 @@ interface AgreementHandlerInterface
     public function createAgreement(ContractingPartyInterface $contractingParty, $termReference);
 
     /**
+     * @return bool is created
+     */
+    public function synchronizeTerm(array $data);
+
+    /**
      * @param ContractingPartyInterface $contractingParty
      * @param string                    $termReference
      *
