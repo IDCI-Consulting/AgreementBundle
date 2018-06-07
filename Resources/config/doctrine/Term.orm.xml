@@ -5,6 +5,9 @@
     https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd"
     >
     <entity name="IDCI\Bundle\AgreementBundle\Model\Term" table="term" repository-class="IDCI\Bundle\AgreementBundle\Repository\Doctrine\DoctrineORMTermRepository">
+        <unique-constraints>
+            <unique-constraint columns="reference,applicable_at" name="term_idx" />
+        </unique-constraints>
         <id name="id" type="uuid" column="id">
             <generator strategy="CUSTOM"/>
             <custom-id-generator class="Ramsey\Uuid\Doctrine\UuidGenerator"/>
